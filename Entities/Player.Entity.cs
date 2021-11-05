@@ -19,7 +19,10 @@ namespace Bubelinez.Entities
                 name, sprite, sounds, speed)
         {
             State = new Dictionary<PlayerState, bool>()
-                { { PlayerState.Move, false }, { PlayerState.Attack, false } };
+            {
+                { PlayerState.Move, false },
+                { PlayerState.Attack, false }
+            };
         }
     }
 }
