@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Bubelinez.Window;
 
 namespace Bubelinez
 {
@@ -6,7 +6,8 @@ namespace Bubelinez
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MainWindow window = new MainWindow();
+            window.Run();
         }
     }
 }
