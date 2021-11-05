@@ -2,7 +2,7 @@
 using SFML.Graphics;
 using SFML.Window;
 
-namespace Bubelinez.RenameIt
+namespace Bubelinez.Window
 {
     public class MainWindow
     {

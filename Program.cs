@@ -1,4 +1,4 @@
-﻿using Bubelinez.RenameIt;
+﻿using Bubelinez.Window;
 
 namespace Bubelinez
 {
