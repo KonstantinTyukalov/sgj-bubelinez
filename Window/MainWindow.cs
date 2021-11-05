@@ -12,12 +12,12 @@ namespace Bubelinez.Window
         private const string _windowName = "BUBELINEZ";
         private const uint _depthBits = 0;
         private const uint _stencilBits = 0;
-        private const uint antialiasingLevel = 1;
+        private const uint _antialiasingLevel = 1;
 
         public MainWindow()
         {
             VideoMode videoMode = new VideoMode(_windowWidth, _windowHeight);
-            ContextSettings contextSettings = new ContextSettings(_depthBits, _stencilBits, antialiasingLevel);
+            ContextSettings contextSettings = new ContextSettings(_depthBits, _stencilBits, _antialiasingLevel);
             _window = new RenderWindow(new VideoMode(_windowWidth, _windowHeight), _windowName, Styles.Fullscreen, contextSettings);
             _window.SetFramerateLimit(60);
             _window.SetVerticalSyncEnabled(true);
