@@ -31,7 +31,7 @@ namespace Bubelinez.Layers
             _buttons = new List<NavigationButton>();
 
             var buttonSprite = new Sprite();
-            buttonSprite.Texture = new Texture("D:\\sgj-bubelinez\\Bubelinez\\Assets\\ETexture.png");
+            buttonSprite.Texture = new Texture(".\\Assets\\Textures\\ETexture.png");
             buttonSprite.Position = new Vector2f(100, 100);
             buttonSprite.TextureRect = new IntRect(new Vector2i(100, 100), new Vector2i(40, 20));
             _buttons.Add(new NavigationButton("Game", new Vector2f(100, 100), buttonSprite, LayersEnum.Menu));
