@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bubelinez", "Bubelinez.csproj", "{82D4A7B5-0ACB-40D4-868A-551A9DA5BD9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bubelinez", "Bubelinez\Bubelinez.csproj", "{82D4A7B5-0ACB-40D4-868A-551A9DA5BD9F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bubelinez.Tests", "Bubelinez.Tests\Bubelinez.Tests.csproj", "{95D9971D-40D3-44EC-855D-B841FD74D0A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
