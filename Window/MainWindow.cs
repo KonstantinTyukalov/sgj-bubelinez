@@ -1,4 +1,6 @@
 ﻿using System;
+using Bubelinez.Interfaces;
+using Bubelinez.Layers;
 using SFML.Graphics;
 using SFML.Window;
 
@@ -14,15 +16,20 @@ namespace Bubelinez.Window
         private const uint _stencilBits = 0;
         private const uint _antialiasingLevel = 1;
 
-        public MainWindow()
+        private LayerManager _layerManager;
+
+        public MainWindow(LayerManager layerManager)
         {
-            VideoMode videoMode = new VideoMode(_windowWidth, _windowHeight);
-            ContextSettings contextSettings = new ContextSettings(_depthBits, _stencilBits, _antialiasingLevel);
-            _window = new RenderWindow(new VideoMode(_windowWidth, _windowHeight), _windowName, Styles.Fullscreen, contextSettings);
+            var videoMode = new VideoMode(_windowWidth, _windowHeight);
+            var contextSettings = new ContextSettings(_depthBits, _stencilBits, _antialiasingLevel);
+            _window = new RenderWindow(videoMode, _windowName, Styles.Fullscreen, contextSettings);
             _window.SetFramerateLimit(60);
             _window.SetVerticalSyncEnabled(true);
             _window.SetKeyRepeatEnabled(false);
 
+            _layerManager = layerManager;
+
+            _window.MouseButtonPressed += _layerManager.HandleMouseEvent;
             _window.Closed += WindowOnClosed;
         }
 
@@ -33,8 +40,7 @@ namespace Bubelinez.Window
                 _window.DispatchEvents();
                 _window.Clear();
 
-                // Paste game logics this
-                    
+
                 _window.Display();
             }
         }

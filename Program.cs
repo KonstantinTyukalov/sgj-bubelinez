@@ -1,4 +1,5 @@
-﻿using Bubelinez.Window;
+﻿using Bubelinez.Layers;
+using Bubelinez.Window;
 
 namespace Bubelinez
 {
@@ -6,7 +7,7 @@ namespace Bubelinez
     {
         static void Main(string[] args)
         {
-            MainWindow window = new MainWindow();
+            MainWindow window = new MainWindow(new LayerManager(new LayerFactory()));
             window.Run();
         }
     }
