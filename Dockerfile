@@ -3,6 +3,7 @@ WORKDIR "/Bubelinez"
 
 COPY ["Bubelinez/Bubelinez.csproj", "."]
 RUN dotnet restore "Bubelinez.csproj"
+
 COPY ["Bubelinez", "."]
 RUN dotnet build "Bubelinez.csproj"
 
