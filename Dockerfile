@@ -4,7 +4,7 @@ WORKDIR /Bubelinez
 COPY ["Bubelinez/Bubelinez.csproj", "."]
 
 RUN dotnet restore "Bubelinez.csproj"
-COPY ./Bubelinez .
+COPY ["Bubelinez", "."]
 RUN dotnet build "Bubelinez.csproj"
 
 WORKDIR "/Bubelinez.Tests"
