@@ -10,4 +10,4 @@ RUN dotnet build "Bubelinez.csproj"
 WORKDIR "/Bubelinez.Tests"
 COPY ["Bubelinez.Tests", "."]
 RUN ls
-RUN dotnet test "Bubelinez.tests.csproj"
+RUN dotnet test "Bubelinez.Tests.csproj"
