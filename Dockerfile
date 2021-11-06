@@ -8,5 +8,6 @@ COPY ["Bubelinez", "."]
 RUN dotnet build "Bubelinez.csproj"
 
 WORKDIR "/Bubelinez.Tests"
+
 COPY ["Bubelinez.Tests", "."]
 RUN dotnet test "Bubelinez.Tests.csproj"
