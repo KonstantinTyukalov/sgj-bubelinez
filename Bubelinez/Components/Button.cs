@@ -16,10 +16,7 @@ namespace Bubelinez.Components
             }
         }
 
-        public IntRect Rect
-        {
-            get => Sprite.TextureRect;
-        }
+        public IntRect Rect => Sprite.TextureRect;
 
         protected Sprite Sprite;
 
