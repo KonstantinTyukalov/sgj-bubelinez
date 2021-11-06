@@ -7,7 +7,7 @@ namespace Bubelinez
     {
         static void Main(string[] args)
         {
-            MainWindow window = new MainWindow(new LayerManager(new LayerFactory()));
+            MainWindow window = new MainWindow();
             window.Run();
         }
     }

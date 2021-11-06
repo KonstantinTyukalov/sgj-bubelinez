@@ -18,18 +18,18 @@ namespace Bubelinez.Window
 
         private readonly LayerManager _layerManager;
 
-        public MainWindow(LayerManager layerManager)
+        public MainWindow()
         {
             var videoMode = new VideoMode(_windowWidth, _windowHeight);
             var contextSettings = new ContextSettings(_depthBits, _stencilBits, _antialiasingLevel);
-            _window = new RenderWindow(videoMode, _windowName, Styles.Fullscreen, contextSettings);
+            _window = new RenderWindow(videoMode, _windowName, Styles.Close, contextSettings);
             _window.SetFramerateLimit(60);
             _window.SetVerticalSyncEnabled(true);
             _window.SetKeyRepeatEnabled(false);
 
-            _layerManager = layerManager;
-
-            _window.MouseButtonPressed += _layerManager.HandleMouseEvent;
+            var layerFactory = new LayerFactory();
+            _layerManager = new LayerManager(layerFactory, _window);
+            
             _window.Closed += WindowOnClosed;
         }
 

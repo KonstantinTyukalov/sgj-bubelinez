@@ -4,5 +4,7 @@
     {
         None,
         Menu,
+        Settings,
+        Game
     }
 }
