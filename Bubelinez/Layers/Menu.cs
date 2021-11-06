@@ -28,7 +28,7 @@ namespace Bubelinez.Layers
             _name = "Menu";
             Sprite = new Sprite()
             {
-                Texture = new Texture("Assets/Test.jpg")
+                Texture = new Texture(70, 80)
             };
             Position = new Vector2f(0, 0);
             Buttons = new List<NavigationButton>()
@@ -36,7 +36,7 @@ namespace Bubelinez.Layers
                 //new NavigationButton("Start", new Vector2i(100, 100), new Vector2i(100, 100)
             };
         }
-        
+
         public LayersEnum GetLayer(Vector2f position)
         {
             // foreach (var button in Buttons)
