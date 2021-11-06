@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Bubelinez.Components;
 using Bubelinez.Interfaces;
+using Bubelinez.Utils;
 using SFML.Graphics;
 using SFML.System;
 
@@ -9,47 +9,49 @@ namespace Bubelinez.Layers
 {
     public class Menu : Drawable, Layer
     {
-        public readonly string _name;
+        public string Name { get; init; }
 
         public Vector2f Position
         {
-            get => Sprite.Position;
+            get => _sprite.Position;
             set
             {
-                if (Sprite != null) Sprite.Position = value;
+                if (_sprite != null) _sprite.Position = value;
             }
         }
 
-        public readonly List<NavigationButton> Buttons;
-        public readonly Sprite Sprite;
+        private readonly List<NavigationButton> _buttons;
+        private readonly Sprite _sprite;
 
         public Menu()
         {
-            _name = "Menu";
-            Sprite = new Sprite()
-            {
-                Texture = new Texture(70, 80)
-            };
+            Name = "Menu";
+            _sprite = new Sprite();
             Position = new Vector2f(0, 0);
-            Buttons = new List<NavigationButton>()
-            {
-                //new NavigationButton("Start", new Vector2i(100, 100), new Vector2i(100, 100)
-            };
+            _buttons = new List<NavigationButton>();
+
+            var buttonSprite = new Sprite();
+            buttonSprite.Texture = new Texture("D:\\sgj-bubelinez\\Bubelinez\\Assets\\ETexture.png");
+            buttonSprite.Position = new Vector2f(100, 100);
+            buttonSprite.TextureRect = new IntRect(new Vector2i(100, 100), new Vector2i(40, 20));
+            _buttons.Add(new NavigationButton("Game", new Vector2f(100, 100), buttonSprite, LayersEnum.Menu));
         }
 
         public LayersEnum GetLayer(Vector2f position)
         {
-            // foreach (var button in Buttons)
-            // {
-            //     if()
-            // }
+            foreach (var button in _buttons)
+            {
+                if (Intersection.CheckPointRectIntersect(position, new FloatRect(button.Position, button.Scale)))
+                    return button.LayerToMove;
+            }
+
             return LayersEnum.Menu;
         }
 
         public void Draw(RenderTarget target, RenderStates states)
         {
-            target.Draw(Sprite);
-            foreach (var button in Buttons)
+            target.Draw(_sprite);
+            foreach (var button in _buttons)
             {
                 target.Draw(button);
             }

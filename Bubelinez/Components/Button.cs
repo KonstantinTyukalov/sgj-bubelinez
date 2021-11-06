@@ -16,6 +16,11 @@ namespace Bubelinez.Components
             }
         }
 
+        public Vector2f Scale
+        {
+            get => Sprite.Scale;
+        }
+
         protected Sprite Sprite;
 
         public virtual void Draw(RenderTarget target, RenderStates states)

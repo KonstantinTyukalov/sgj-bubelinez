@@ -5,11 +5,13 @@ namespace Bubelinez.Utils
 {
     public static class Intersection
     {
-        public static bool CheckPointRectIntersec(Vector2f point, FloatRect rect)
+        public static bool CheckPointRectIntersect(Vector2f point, FloatRect rect)
         {
-            var result = point - new Vector2f(rect.Top, rect.Left);
-            if (result.X > 0 && result.Y > 0) return true;
-            return false;
+            if (point.X < rect.Left) return false;
+            if (point.Y < rect.Top) return false;
+            if (point.X > rect.Left + rect.Width) return false;
+            if (point.Y > rect.Top + rect.Height) return false;
+            return true;
         }
     }
 }

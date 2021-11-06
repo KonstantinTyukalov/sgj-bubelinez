@@ -16,7 +16,7 @@ namespace Bubelinez.Window
         private const uint _stencilBits = 0;
         private const uint _antialiasingLevel = 1;
 
-        private LayerManager _layerManager;
+        private readonly LayerManager _layerManager;
 
         public MainWindow(LayerManager layerManager)
         {
@@ -40,7 +40,8 @@ namespace Bubelinez.Window
                 _window.DispatchEvents();
                 _window.Clear();
 
-
+                _layerManager.CurrentLayer.Draw(_window, RenderStates.Default);
+                
                 _window.Display();
             }
         }
