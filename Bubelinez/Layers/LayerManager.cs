@@ -19,7 +19,7 @@ namespace Bubelinez.Layers
         public void HandleMouseEvent(object sender, MouseButtonEventArgs e)
         {
             var layer = CurrentLayer.GetLayer(new Vector2f(e.X, e.Y));
-            if(layer != LayersEnum.None) CurrentLayer = _layerFactory.getLayer(LayersEnum.None);
+            CurrentLayer = _layerFactory.getLayer(layer);
         }
     }
 }

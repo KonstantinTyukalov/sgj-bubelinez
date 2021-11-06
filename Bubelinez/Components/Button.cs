@@ -16,9 +16,9 @@ namespace Bubelinez.Components
             }
         }
 
-        public Vector2f Scale
+        public IntRect Rect
         {
-            get => Sprite.Scale;
+            get => Sprite.TextureRect;
         }
 
         protected Sprite Sprite;

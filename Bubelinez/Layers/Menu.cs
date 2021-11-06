@@ -34,14 +34,15 @@ namespace Bubelinez.Layers
             buttonSprite.Texture = new Texture(".\\Assets\\Textures\\ETexture.png");
             buttonSprite.Position = new Vector2f(100, 100);
             buttonSprite.TextureRect = new IntRect(new Vector2i(100, 100), new Vector2i(40, 20));
-            _buttons.Add(new NavigationButton("Game", new Vector2f(100, 100), buttonSprite, LayersEnum.Menu));
+            _buttons.Add(new NavigationButton("Game", new Vector2f(100, 100), buttonSprite, LayersEnum.None));
         }
 
         public LayersEnum GetLayer(Vector2f position)
         {
             foreach (var button in _buttons)
             {
-                if (Intersection.CheckPointRectIntersect(position, new FloatRect(button.Position, button.Scale)))
+                
+                if (Intersection.CheckPointRectIntersect(position, new FloatRect(button.Position, new Vector2f(button.Rect.Width, button.Rect.Height))))
                     return button.LayerToMove;
             }
 
