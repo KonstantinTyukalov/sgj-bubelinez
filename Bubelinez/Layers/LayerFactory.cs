@@ -2,7 +2,6 @@
 
 namespace Bubelinez.Layers
 {
-    
     public class LayerFactory
     {
         public Layer getLayer(LayersEnum layer)
