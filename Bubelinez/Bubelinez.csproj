@@ -1,12 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net5.0</TargetFramework>
-    </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="SFML.Net" Version="2.5.0" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SFML.Net" Version="2.5.0" />
+    <SRC Include="Assets\Textures\*.*" />
+    <DST Include="bin\Debug\net5.0\Assets\Textures" />
+  </ItemGroup>
+
+  <Target Name="CopyFiles" AfterTargets="AfterBuild">
+    <Copy SourceFiles="@(SRC)" DestinationFolder="@(DST)" />
+  </Target>
 
 </Project>

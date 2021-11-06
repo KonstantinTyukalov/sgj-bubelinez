@@ -1,4 +1,5 @@
-﻿using Bubelinez.Window;
+﻿using Bubelinez.Layers;
+using Bubelinez.Window;
 
 namespace Bubelinez
 {
