@@ -23,11 +23,6 @@ namespace Bubelinez.Layers
             SubscribeLayerToMouseButtonPressed(CurrentLayer);
         }
 
-        public void Processe()
-        {
-            
-        }
-
         public void SwitchLayer(object sender, NavigationTriggerArgs e)
         {
             UnsubscribeLayerFromMouseButtonPressed(CurrentLayer);
