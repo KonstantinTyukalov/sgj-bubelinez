@@ -11,7 +11,7 @@ namespace Bubelinez.Window
         private readonly RenderWindow _window;
         private const uint _windowWidth = 1280;
         private const uint _windowHeight = 720;
-        private const string _windowName = "BUBELINEZ";
+        private const string _windowName = "Bubelinez";
         private const uint _depthBits = 0;
         private const uint _stencilBits = 0;
         private const uint _antialiasingLevel = 1;
